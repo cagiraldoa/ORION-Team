@@ -16,8 +16,8 @@ class CreateFragancesTable extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->bigInteger('phone');
-            $table->string('email');
+            $table->bigInteger('cell');
+            $table->bigInteger('identification');
             $table->string('area');
             $table->integer('points')->default(0);  
             $table->timestamps();

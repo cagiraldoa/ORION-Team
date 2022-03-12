@@ -11,8 +11,8 @@ class Team extends Model
 
     protected $fillable = [
         'name',
-        'phone',
-        'email',
+        'cell',
+        'identification',
         'area',
         'points'
     ];

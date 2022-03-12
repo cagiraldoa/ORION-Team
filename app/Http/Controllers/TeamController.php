@@ -30,8 +30,8 @@ class TeamController extends Controller
 
             'name' => $request->name,
             'area' => $request->area,
-            'phone' => $request->phone,
-            'email' => $request->email
+            'cell' => $request->cell,
+            'identification' => $request->identification
         ]);
 
         return back()->withSuccess('Elemento creado satisfactoriamente');
@@ -74,7 +74,7 @@ class TeamController extends Controller
      // "area" => "required",
       //"phone" => "required",
       //"email" => "required",
-      "points" => "required|numeric|gt:0",
+      "points" => "required",
     ]);
 
     $team = Team::findOrFail($request->input("id"));

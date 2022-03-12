@@ -29,6 +29,18 @@
 
                     <div class="form-group">
 
+                        <input type="number" class="form-control" name="identification" placeholder="Cedula" required="true">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="number" class="form-control" name="cell" placeholder="Celular" required="true">
+
+                    </div>
+
+                    <div class="form-group">
+
                         <select type="text" class="form-control" name="area" placeholder="Area"
                             required="true">
                             <option value="Administacion">Administración</option>
@@ -40,19 +52,6 @@
                             <option value="Investigación">Investigación</option>
                             <option value="Producción">Producción</option>
                         </select>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <input type="number" class="form-control" name="phone" placeholder="Phone" required="true">
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <textarea type="text" class="form-control" name="email" placeholder="Email"
-                            required="true"></textarea>
 
                     </div>
 

@@ -22,9 +22,9 @@
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Nombre</th>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Celular</th>
                             <th scope="col">Area</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,9 +32,9 @@
                         <tr>
 
                             <td>{{ $team->name }}</td>
+                            <td>{{ $team->identification }}</td>
+                            <td>{{ $team->cell }}</td>
                             <td>{{ $team->area }}</td>
-                            <td>{{ $team->phone }}</td>
-                            <td>{{ $team->email }}</td>
                         </tr>
 
                     </tbody>
