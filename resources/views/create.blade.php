@@ -41,6 +41,12 @@
 
                     <div class="form-group">
 
+                        <input type="text" class="form-control" name="email" placeholder="Email" required="true">
+
+                    </div>
+
+                    <div class="form-group">
+
                         <select type="text" class="form-control" name="area" placeholder="Area"
                             required="true">
                             <option value="Administacion">Administración</option>

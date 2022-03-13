@@ -24,6 +24,7 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">Cedula</th>
                             <th scope="col">Celular</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Area</th>
                         </tr>
                     </thead>
@@ -34,6 +35,7 @@
                             <td>{{ $team->name }}</td>
                             <td>{{ $team->identification }}</td>
                             <td>{{ $team->cell }}</td>
+                            <td>{{ $team->email }}</td>
                             <td>{{ $team->area }}</td>
                         </tr>
 

@@ -14,6 +14,7 @@ class Team extends Model
         'cell',
         'identification',
         'area',
-        'points'
+        'points',
+        'email'
     ];
 }

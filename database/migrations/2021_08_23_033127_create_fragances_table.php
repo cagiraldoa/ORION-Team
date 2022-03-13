@@ -19,6 +19,7 @@ class CreateFragancesTable extends Migration
             $table->bigInteger('cell');
             $table->bigInteger('identification');
             $table->string('area');
+            $table->string('email');
             $table->integer('points')->default(0);  
             $table->timestamps();
         });

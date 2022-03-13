@@ -31,10 +31,11 @@ class TeamController extends Controller
             'name' => $request->name,
             'area' => $request->area,
             'cell' => $request->cell,
-            'identification' => $request->identification
+            'identification' => $request->identification,
+            'email' => $request->email
         ]);
 
-        return back()->withSuccess('Elemento creado satisfactoriamente');
+        return back()->withSuccess('Integrante creado satisfactoriamente');
     }
 
     public function list()
