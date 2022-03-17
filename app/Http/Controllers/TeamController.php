@@ -49,7 +49,7 @@ class TeamController extends Controller
 
         $teams = Team::orderBy('points')->where('area', $area)->get();
 
-            return view('list', compact('teams'));
+        return view('list', compact('teams'));
     }
 
     public function show($id)
@@ -70,7 +70,7 @@ class TeamController extends Controller
         Team::destroy($id);
 
 
-        return redirect()->route('list.index');
+        return redirect()->route('list.index', 'Todos');
     }
 
 
@@ -96,6 +96,9 @@ class TeamController extends Controller
 
         $team->save();
 
-        return redirect()->route("list.index");
+        
+
+            return redirect()->route('list.index', 'Todos');
+        
     }
 }
