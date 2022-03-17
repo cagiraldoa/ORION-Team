@@ -47,7 +47,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-lg">Borrar</button>
-                        <a href="{{ route('list.index') }}" class="btn btn-primary btn-lg float-right">
+                        <a href="{{ route('list.index', 'Todos') }}" class="btn btn-primary btn-lg float-right">
                             Volver
                         </a>
                     </form>

@@ -22,7 +22,7 @@
                     <h1>Nuevo Miembro</h1>
                 </a>
 
-                <a href="{{ route('list.index') }}" class="btn btn-success btn-lg float-right">
+                <a href="{{ route('list.index', 'Todos') }}" class="btn btn-success btn-lg float-right">
                     <h1>Ver Miembros</h1>
                 </a>
             </div>

@@ -68,7 +68,7 @@
                         </button>
                         <br>
                         <br>
-                        <a href="{{ route('list.index') }}" class="btn btn-primary btn-lg">
+                        <a href="{{ route('list.index', 'Todos') }}" class="btn btn-primary btn-lg">
                             Ver TEAM
                         </a>
                     </div>

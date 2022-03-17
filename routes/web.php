@@ -20,7 +20,7 @@ Route::get('/', [HomeController::class, 'index'])->name("home");
 
 Route::get('/create', [TeamController::class, 'index'])->name("create.index");
 
-Route::get('/list', [TeamController::class, 'list'])->name("list.index");
+Route::get('/list/{area}', [TeamController::class, 'list'])->name("list.index");
 
 Route::get('/individual/{id}', [TeamController::class, 'show'])->name("list.show");
 

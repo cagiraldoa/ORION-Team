@@ -15,6 +15,30 @@
                 <h1 class="display-4 text-center">TEAM</h1>
                 <hr>
                 <br>
+                <nav>
+                            
+                          
+                    <select type="text" class="form-control" name="forma" onchange="location = this.value;">
+                    <option>Seleccionar</option>
+                    <option value="Todos">Todos</option>
+                    <option value="Administracion">Administracion</option>
+                    <option value="Mecanica">Mecanica</option>
+                    <option value="Electronica">Electronica</option>
+                    <option value="Estrategia">Estrategia</option>
+                    <option value="Comunicaciones">Comunicaciones</option>
+                    <option value="Investigacion">Investigacion</option>
+                    <option value="Produccion">Produccion</option>
+                </select>
+                  
+         
+                    
+                  </nav>
+                 
+
+
+
+                  <br>
+                  <br>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         @foreach ($teams as $team)

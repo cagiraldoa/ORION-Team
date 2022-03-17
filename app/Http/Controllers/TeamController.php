@@ -38,12 +38,18 @@ class TeamController extends Controller
         return back()->withSuccess('Integrante creado satisfactoriamente');
     }
 
-    public function list()
+    public function list($area)
     {
 
-        $teams = Team::orderBy('points')->get(); 
+        if ($area == "Todos") {
+            $teams = Team::orderBy('points')->get();
 
-        return view('list', compact('teams'));
+            return view('list', compact('teams'));
+        }
+
+        $teams = Team::orderBy('points')->where('area', $area)->get();
+
+            return view('list', compact('teams'));
     }
 
     public function show($id)
@@ -69,27 +75,27 @@ class TeamController extends Controller
 
 
     public function edit(Request $request)
-  {
-    $request->validate([
-     // "name" => "required",
-     // "area" => "required",
-      //"phone" => "required",
-      //"email" => "required",
-      "points" => "required",
-    ]);
+    {
+        $request->validate([
+            // "name" => "required",
+            // "area" => "required",
+            //"phone" => "required",
+            //"email" => "required",
+            "points" => "required",
+        ]);
 
-    $team = Team::findOrFail($request->input("id"));
+        $team = Team::findOrFail($request->input("id"));
 
-    $team->fill([
-     // "name" => $request->input("name"),
-     // "area" => $request->input("area"),
-     // "phone" => $request->input("phone"),
-      //"email" => $request->input("email"),
-      "points" => $request->input("points"),
-    ]);
+        $team->fill([
+            // "name" => $request->input("name"),
+            // "area" => $request->input("area"),
+            // "phone" => $request->input("phone"),
+            //"email" => $request->input("email"),
+            "points" => $request->input("points"),
+        ]);
 
-    $team->save();
+        $team->save();
 
-    return redirect()->route("list.index");
-  }
+        return redirect()->route("list.index");
+    }
 }
