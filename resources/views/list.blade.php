@@ -39,36 +39,47 @@
 
                   <br>
                   <br>
+                  <form action="{{ route('edit_team') }}" method="POST">
+                    @csrf
+                    @method('PUT')
                 <table class="table table-bordered">
                     <thead class="thead-dark">
-                        @foreach ($teams as $team)
+                        
                         <tr>
                             <th scope="col">Points</th>
                             <th scope="col">Nombre</th>
                         </tr>
-                        @break
-                        @endforeach
+                        
                     </thead>
+                    
                     <tbody>
+
+                        
 
                         @foreach ($teams->reverse() as $team)
                             <tr>
-                               <form action="{{ route('edit_team') }}" method="POST">
-                                @csrf
-                                @method('PUT')
-                                    <td width="245px" scope="row"><input type="number" name="points" value="{{ $team->points }}"></a>
-                                    <button name="id" value="{{$team->id}}" type="submit" class="btn btn-success text-right">✓</button>
+                               
+                                <input type="hidden" name="idteam[]" value="{{$team->id}}">
+                                    <td width="245px" scope="row"><input type="number" name="points[]" value="{{ $team->points }}"></a>
+                                        
                                     </td>
-                                </form>
+                                
                                 
                                 <td><a style="text-decoration: none"
                                     href="{{ route('list.show', $team->id) }}">{{ $team->name }}</td>
                                 
                             </tr>
+                            
                         @endforeach
+                        
                     </tbody>
+                    
 
                 </table>
+                <button type="submit" class="btn btn-danger btn-block text">Guardar</button>
+                    
+                    </form>
+                <br>
                 <br>
                 <div class="text-center">
                     <a href="{{ route('create.index') }}" class="btn btn-success btn-lg btn-block">

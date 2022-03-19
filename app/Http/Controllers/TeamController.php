@@ -76,25 +76,13 @@ class TeamController extends Controller
 
     public function edit(Request $request)
     {
-        $request->validate([
-            // "name" => "required",
-            // "area" => "required",
-            //"phone" => "required",
-            //"email" => "required",
-            "points" => "required",
-        ]);
-
-        $team = Team::findOrFail($request->input("id"));
-
-        $team->fill([
-            // "name" => $request->input("name"),
-            // "area" => $request->input("area"),
-            // "phone" => $request->input("phone"),
-            //"email" => $request->input("email"),
-            "points" => $request->input("points"),
-        ]);
-
-        $team->save();
+        foreach ($request->input("points") as $key => $value) {
+            $team = Team::findOrFail($request->input("idteam")[$key]);
+            
+            $team->points = $value;
+            
+            $team->update();
+        }
 
         
 
