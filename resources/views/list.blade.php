@@ -16,8 +16,8 @@
                 <hr>
                 <br>
                 <nav>
-                            
-                          
+
+
                     <select type="text" class="form-control" name="forma" onchange="location = this.value;">
                     <option>Seleccionar</option>
                     <option value="Todos">Todos</option>
@@ -28,12 +28,14 @@
                     <option value="Comunicaciones">Comunicaciones</option>
                     <option value="Investigacion">Investigacion</option>
                     <option value="Produccion">Produccion</option>
+                    <option value="Aerodinamica">Aerodinamica</option>
+                    <option value="Salud">Salud</option>
                 </select>
-                  
-         
-                    
+
+
+
                   </nav>
-                 
+
 
 
 
@@ -44,40 +46,40 @@
                     @method('PUT')
                 <table class="table table-bordered">
                     <thead class="thead-dark">
-                        
+
                         <tr>
                             <th scope="col">Points</th>
                             <th scope="col">Nombre</th>
                         </tr>
-                        
+
                     </thead>
-                    
+
                     <tbody>
 
-                        
+
 
                         @foreach ($teams->reverse() as $team)
                             <tr>
-                               
+
                                 <input type="hidden" name="idteam[]" value="{{$team->id}}">
                                     <td width="245px" scope="row"><input type="number" name="points[]" value="{{ $team->points }}"></a>
-                                        
+
                                     </td>
-                                
-                                
+
+
                                 <td><a style="text-decoration: none"
                                     href="{{ route('list.show', $team->id) }}">{{ $team->name }}</td>
-                                
+
                             </tr>
-                            
+
                         @endforeach
-                        
+
                     </tbody>
-                    
+
 
                 </table>
                 <button type="submit" class="btn btn-danger btn-block text">Guardar</button>
-                    
+
                     </form>
                 <br>
                 <br>

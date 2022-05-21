@@ -57,6 +57,7 @@
                             <option value="Comunicaciones">Comunicaciones</option>
                             <option value="Investigación">Investigación</option>
                             <option value="Producción">Producción</option>
+                            <option value="Salud">Salud</option>
                         </select>
 
                     </div>
@@ -77,7 +78,7 @@
 
             </form>
         </div>
-    
+
 </body>
 
 </html>
