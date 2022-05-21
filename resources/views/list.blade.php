@@ -13,6 +13,7 @@
     <div class="col-auto p-5 text-center col-12 col.sm-10 col-lg-6 mx-auto">
                 <a class="btn btn-warning" href="{{ route('home') }}"><---</a>
                 <h1 class="display-4 text-center">TEAM</h1>
+                <h3 class="display-4 text-center">{cantidad} Miembros</h3>
                 <hr>
                 <br>
                 <nav>

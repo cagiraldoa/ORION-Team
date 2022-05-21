@@ -44,12 +44,16 @@ class TeamController extends Controller
         if ($area == "Todos") {
             $teams = Team::orderBy('points')->get();
 
-            return view('list', compact('teams'));
+            $cantidad = $teams->count();
+
+            return view('list', compact('teams', 'cantidad'));
         }
 
         $teams = Team::orderBy('points')->where('area', $area)->get();
 
-        return view('list', compact('teams'));
+        $cantidad = $teams->count();
+
+        return view('list', compact('teams', 'cantidad'));
     }
 
     public function show($id)
@@ -78,15 +82,33 @@ class TeamController extends Controller
     {
         foreach ($request->input("points") as $key => $value) {
             $team = Team::findOrFail($request->input("idteam")[$key]);
-            
+
             $team->points = $value;
-            
+
             $team->update();
         }
 
-        
 
-            return redirect()->route('list.index', 'Todos');
-        
+
+        return redirect()->route('list.index', 'Todos');
+    }
+
+    public function edit_individual($id, Request $request)
+    {
+        $miembro = Team::findOrFail($id);
+
+        $miembro->fill([
+            'name' => $request->name,
+            'area' => $request->area,
+            'cell' => $request->cell,
+            'identification' => $request->identification,
+            'email' => $request->email
+        ]);
+
+        $miembro->save();
+
+
+
+        return redirect()->route('list.index', 'Todos');
     }
 }

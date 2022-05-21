@@ -14,46 +14,56 @@
     <div class="row align-items-center justify-content-center vh-100">
         <div class="col-12 col.sm-10 col-lg-8 mx-auto">
             <div class="bg-white shadow rounded py-3 px-4">
-                <a class="btn btn-warning" href="{{ route('home') }}"><---</a>
-                <h1 class="display-4 text-center">TEAM {{$team->id}}</h1>
-                    <hr>
-                    <br>
-                <table class="table table-bordered">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Cedula</th>
-                            <th scope="col">Celular</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Area</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <a class="btn btn-warning" href="{{ route('home') }}">
+                    <---< /a>
+                        <h1 class="display-4 text-center">TEAM {{$team->id}}</h1>
+                        <hr>
+                        <br>
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Cedula</th>
+                                    <th scope="col">Celular</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Area</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <form action="{{ route('edit_member', $team->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <tr>
 
-                        <tr>
+                                        <td><input type="text" name="name" value="{{ $team->name }}"></td>
+                                        <td><input type="number" name="identification" value="{{ $team->identification }}"></td>
+                                        <td><input type="number" name="cell" value="{{ $team->cell }}"></td>
+                                        <td><input type="text" name="email" value="{{ $team->email }}"></td>
+                                        <td><input type="text" name="area" value="{{ $team->area }}"></td>
+                                    </tr>
+                                    <button type="submit" class="btn btn-danger btn-lg">Editar</button>
 
-                            <td>{{ $team->name }}</td>
-                            <td>{{ $team->identification }}</td>
-                            <td>{{ $team->cell }}</td>
-                            <td>{{ $team->email }}</td>
-                            <td>{{ $team->area }}</td>
-                        </tr>
+                                </form>
+                            </tbody>
+                        </table>
+                        <br>
+                        <div class="col-12 col.sm-10 col-lg-3 mx-auto">
+                            <form action="{{ route('delete_team', $team->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-lg">Borrar</button>
 
-                    </tbody>
-                </table>
-                <br>
-                <div class="col-12 col.sm-10 col-lg-3 mx-auto">
-                    <form action="{{ route('delete_team', $team->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-lg">Borrar</button>
-                        <a href="{{ route('list.index', 'Todos') }}" class="btn btn-primary btn-lg float-right">
-                            Volver
-                        </a>
-                    </form>
+                            </form>
 
 
-                </div>
+
+
+                            <a href="{{ route('list.index', 'Todos') }}" class="btn btn-primary btn-lg float-right">
+                                Volver
+                            </a>
+
+
+                        </div>
             </div>
         </div>
 
