@@ -16,23 +16,24 @@
             <div class="bg-white shadow rounded py-3 px-4">
                 <a class="btn btn-warning" href="{{ route('home') }}">
                     <---< /a>
-                        <h1 class="display-4 text-center">TEAM {{$team->id}}</h1>
+                        <h1 class="display-4 text-center">MIEMBRO {{$team->id}}</h1>
                         <hr>
                         <br>
-                        <table class="table table-bordered">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Cedula</th>
-                                    <th scope="col">Celular</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Area</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <form action="{{ route('edit_member', $team->id) }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
+                        <form action="{{ route('edit_member', $team->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Cedula</th>
+                                        <th scope="col">Celular</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Area</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
                                     <tr>
 
                                         <td><input type="text" name="name" value="{{ $team->name }}"></td>
@@ -41,11 +42,13 @@
                                         <td><input type="text" name="email" value="{{ $team->email }}"></td>
                                         <td><input type="text" name="area" value="{{ $team->area }}"></td>
                                     </tr>
-                                    <button type="submit" class="btn btn-danger btn-lg">Editar</button>
 
-                                </form>
-                            </tbody>
+
+                        </form>
+
+                        </tbody>
                         </table>
+                        <button type="submit" class="btn btn-danger btn-lg">Editar</button>
                         <br>
                         <div class="col-12 col.sm-10 col-lg-3 mx-auto">
                             <form action="{{ route('delete_team', $team->id) }}" method="POST">
