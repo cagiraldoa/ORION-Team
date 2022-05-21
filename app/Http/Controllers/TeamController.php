@@ -44,16 +44,16 @@ class TeamController extends Controller
         if ($area == "Todos") {
             $teams = Team::orderBy('points')->get();
 
-            $cantidad = $teams->count();
+            $cantidad_team = $teams->count();
 
-            return view('list', compact('teams', 'cantidad'));
+            return view('list', compact('teams', 'cantidad_team'));
         }
 
         $teams = Team::orderBy('points')->where('area', $area)->get();
 
-        $cantidad = $teams->count();
+        $cantidad_team = $teams->count();
 
-        return view('list', compact('teams', 'cantidad'));
+        return view('list', compact('teams', 'cantidad_team'));
     }
 
     public function show($id)
