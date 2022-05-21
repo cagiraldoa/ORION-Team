@@ -15,7 +15,7 @@
         <div class="col-12 col.sm-10 col-lg-8 mx-auto">
             <div class="bg-white shadow rounded py-3 px-4">
                 <a class="btn btn-warning" href="{{ route('home') }}">
-                    <---< /a>
+                    <--- </a>
                         <h1 class="display-4 text-center">MIEMBRO {{$team->id}}</h1>
                         <hr>
                         <br>
