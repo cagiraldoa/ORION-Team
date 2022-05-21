@@ -26,6 +26,8 @@ Route::get('/individual/{id}', [TeamController::class, 'show'])->name("list.show
 
 Route::delete('/individual/{id}', [TeamController::class, 'delete'])->name("delete_team");
 
+Route::put('/individual/{id}', [TeamController::class, 'edit_member'])->name("edit_individual");
+
 Route::put('/list', [TeamController::class, 'edit'])->name("edit_team");
 
 Route::post('/create', [TeamController::class, 'add'])->name("add_team");
