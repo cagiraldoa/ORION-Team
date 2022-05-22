@@ -12,7 +12,7 @@
 
 
     <div class="row align-items-center justify-content-center vh-100">
-        <div class="col-24 col.sm-10 col-lg-8 mx-auto">
+        <div class="col-12 col.sm-10 col-lg-8 mx-auto">
             <div class="bg-white shadow rounded py-3 px-4">
                 <a class="btn btn-warning" href="{{ route('home') }}">
                     <--- </a>
@@ -48,7 +48,9 @@
 
                         </tbody>
                         </table>
+                        <div class="col-12 col.sm-10 col-lg-3 mx-auto">
                         <button type="submit" class="btn btn-success btn-lg">Editar</button>
+                        </div>
                         </form>
                         <br>
                         <div class="col-12 col.sm-10 col-lg-3 mx-auto">
