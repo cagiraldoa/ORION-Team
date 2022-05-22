@@ -44,11 +44,12 @@
                                     </tr>
 
 
-                        </form>
+
 
                         </tbody>
                         </table>
-                        <button type="submit" class="btn btn-danger btn-lg">Editar</button>
+                        <button type="submit" class="btn btn-success btn-lg">Editar</button>
+                        </form>
                         <br>
                         <div class="col-12 col.sm-10 col-lg-3 mx-auto">
                             <form action="{{ route('delete_team', $team->id) }}" method="POST">
